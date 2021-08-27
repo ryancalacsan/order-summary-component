@@ -5,6 +5,13 @@
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    @include breakpoint-up(large) {
+        width: 450px;
+        height: 697px;
+        box-shadow: 0 40px 40px -20px rgba(13, 48, 189, 0.1518);
+    }
+
     &__hero {
         height: 10rem;
         width: 100%;
@@ -14,14 +21,27 @@
         background-position: center center;
         border-radius: 20px 20px 0 0;
         margin-bottom: 32px;
+
+        @include breakpoint-up(large) {
+            height: 220px;
+            margin-bottom: 45px;
+        }
     }
 
     &__title {
         height: 29px;
         font-size: 1.375rem;
         font-weight: 900;
+        padding-top: 3.5px;
         margin-bottom: 1rem;
         color: $darkBlue;
+
+        @include breakpoint-up(large) {
+            height: 37px;
+            font-size: 1.75rem;
+            padding-top: 4.5px;
+            margin-bottom: 1.0625rem;
+        }
     }
     &__text {
         font-size: 0.9375rem;
@@ -31,16 +51,24 @@
         align-items: center;
         color: $desaturatedBlue;
         margin: 0 32px 24px 32px;
+
+        @include breakpoint-up(large) {
+            margin: 0 48px 20px 48px;
+            font-size: 1rem;
+            height: 78px;
+        }
     }
     &__plan {
         display: flex;
         background-color: $veryPaleBlue;
         margin: 0 24px 24px 24px;
-        border-radius: 10px;
+        border-radius: 11px;
         font-size: 14px;
         padding: 17px 16px 16px 16px;
 
-        img {
+        @include breakpoint-up(large) {
+            padding: 25px 24px;
+            margin: 0 48px 32px 48px;
         }
 
         &__type {
@@ -48,6 +76,12 @@
             flex-direction: column;
             justify-content: space-around;
             margin-left: 20px;
+            font-size: 0.875rem;
+
+            @include breakpoint-up(large) {
+                font-size: 1rem;
+            }
+
             h2 {
                 font-weight: 900;
             }
@@ -58,35 +92,60 @@
         }
 
         a {
-            font-size: 13px;
+            font-size: 0.8125rem;
             font-weight: 700;
             text-align: end;
             align-self: center;
             color: $brightBlue;
             text-decoration: underline;
             flex: auto;
+            transition: opacity 150ms ease-in-out;
+
+            &:hover {
+                opacity: 0.75;
+            }
+
+            @include breakpoint-up(large) {
+                font-size: 0.875rem;
+            }
         }
     }
     &__cta {
         a {
+            font-size: 0.9375rem;
+            font-weight: 900;
             display: block;
             background-color: $brightBlue;
             height: 50px;
             margin: 0 24px 24px 24px;
-            border-radius: 12px;
+            border-radius: 11px;
             text-align: center;
             padding: 15px 0;
             color: $white;
             text-decoration: none;
             box-shadow: 0 20px 20px 0 rgba(56, 42, 225, 0.19%);
+            transition: opacity 150ms ease-in-out;
+
+            &:hover {
+                opacity: 0.75;
+            }
+
+            @include breakpoint-up(large) {
+                margin: 0 48px 32px 48px;
+            }
         }
     }
     &__cancel {
         a {
             font-size: 15px;
-            font-weight: 700;
+            font-weight: 900;
             text-decoration: none;
             color: $desaturatedBlue;
+            transition: color 150ms ease-in-out;
+
+            &:hover {
+                color: $darkBlue;
+            }
         }
     }
 }
